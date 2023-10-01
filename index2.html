@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content:center ;
+        }
+        div img:first-child{
+            margin: 70px;
+            width: 150px;
+            height: 150px;
+        }
+        div img:last-child{
+            margin: 70px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="/1197996-200.png" alt="" id="button-left" style="transform: scaleX(-1); " onclick="leftButton()">
+        <img src="https://picsum.photos/id/1/200/300" alt="" id="img">
+        <img src="/1197996-200.png" alt="" id="button-right" onclick="buttonRight()">
+    </div>
+
+
+
+    <script>
+        let i =0;
+        function myfun(){
+        let img = document.getElementById("img");
+        img.src = `https://picsum.photos/id/${i}/500/300`;
+        if (i == 5) i=0;
+        i++;
+        setTimeout(myfun,2000);
+        }      
+        myfun();
+        function leftButton(){
+            i--;
+            let img = document.getElementById("img");
+            img.src = `https://picsum.photos/id/${i}/500/300`;
+        }
+        function buttonRight(){
+            i++;
+            let img = document.getElementById("img");
+            img.src = `https://picsum.photos/id/${i}/500/300`;
+        }
+    </script>
+</body>
+</html>

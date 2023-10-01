@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            margin: 0;
+            background-color: orange;
+            position: fixed;
+            padding: 20px 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.co.uk/" onclick="myfun(event)">google</a>
+    <script>
+        function myfun(e){
+            e.preventDefault();
+            let m = 10;
+            setInterval(function timer(){
+                document.documentElement.innerHTML = m ;
+                if(m == 0){
+                    clearInterval(timer);
+                    let addLink = e.target.href;
+                    window.open(addLink);
+                } 
+                    m--;
+                
+                
+            } , 1000)
+        }
+    </script>
+</body>
+</html>
